@@ -35,7 +35,7 @@ interface PolarConfig {
   project: string;  // Froont project slug or `_new_` if new project is needed
   variables: {[variable: string]: string};  // JS Object containing slugs and values of the variables
   css: string;  // Polar generated CSS of the page in string format
-  html: boolean;  // Should we return HTML
+  html?: boolean;  // Should we return HTML
   previewURL?: string;  // URL to the page to be show in the preview iFrame (defaults to Froont project URL), `.b-content` must be present in preview page
   fileUploadURL?: string;  // URL to use for file upload (defaults to Froont file upload URL)
   resultCallback?: Function|null;  // Function to be called after user has done editing (defaults to null)
