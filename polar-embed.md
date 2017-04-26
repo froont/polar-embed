@@ -34,6 +34,7 @@ interface PolarConfig {
   token: string;  // Authentication token
   project: string;  // Froont project slug or `_new_` if new project is needed
   variables: {[variable: string]: string};  // JS Object containing slugs and values of the variables
+  stepLabels?: {[slug: string]: string};  // JS Object containing app step slugs and label values
   css: string;  // Polar generated CSS of the page in string format
   html?: boolean;  // Should we return HTML
   cssSelectorPrefix?: string;  // CSS selector to prefix each style selector
@@ -54,6 +55,10 @@ var config = {
   variables: {
     userName: 'Darth Vaider',
     profileImage: 'https://cdn.com/mask.jpeg'
+  },
+  stepLabels: {
+    'select-page': 'Choose Page',
+    'design': 'Edit Style'
   },
   css: '.fr_header {background-color: #fff;}',
   html: false,
@@ -168,6 +173,14 @@ but here are some that are available for the test page.
     "soundcloud": ""
 }
 ```
+
+
+### Step Labels:
+```TypeScript
+stepLabels: {[slug: string]: string}
+```
+Step Labels is a plain JS object that contains step slug and it's display name (label) in the app UI. Step labels are visible as the final part of each step URL. For instance, the slug `design` is the final part of URL for Polar popup design step - `#/magic/edit/_new_/design`.
+
 
 ### CSS string:
 ```TypeScript
