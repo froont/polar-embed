@@ -177,7 +177,7 @@ but here are some that are available for the test page.
 ```TypeScript
 stepLabels: {[slug: string]: string}
 ```
-Step Labels is a plain JS object that contains step slug and it's display name (label) in the app UI.
+Step Labels is a plain JS object that contains step slug and it's display name (label) in the app UI. Step labels are visible as the final part of each step URL. For instance, the slug `design` is the final part of URL for Polar popup design step - `#/magic/edit/_new_/design`.
 
 
 ### CSS string:
