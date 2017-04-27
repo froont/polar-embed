@@ -48,7 +48,7 @@ interface PolarConfig {
 ### Example configuration object:
 ```JavaScript
 var config = {
-  embedUrl: 'http://froont.com/-polar/embed.js',
+  embedUrl: 'https://froont.com/-polar/embed.js',
   app: 'darth-v',
   token: '24fbe8fd-890f-41ff-9cca-201m2a7cgd3b';
   project: 'death-star-plans';
@@ -81,12 +81,12 @@ It's used to switch between production and development logics as well as to cont
 It will be a variation of this URL:
 
 ```
-polarUrl: 'http://froont.com/-polar/embed.js'
+polarUrl: 'https://froont.com/-polar/embed.js'
 ```
 
 The URL may contain a version for cache busting or to load a specific embed version.
 ```
-http://froont.com/-polar/embed.<version>.js
+https://froont.com/-polar/embed.<version>.js
 ```
 
 ### App identifier:
