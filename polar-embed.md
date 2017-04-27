@@ -8,7 +8,7 @@ If an element doesn't exist, it will be created and appended at the end of the `
 
 ```JavaScript
 (function() {
-  function loadFrPolar(a,b,c){var d="http://froont.com/-polar/embed.js",e=defaultNodeSelector=".fr-polar-popup-placeholder-js";"embedUrl"in c&&c.embedUrl&&(d=c.embedUrl,delete c.embedUrl),"nodeSelector"in c&&c.nodeSelector&&(e=c.nodeSelector,delete c.nodeSelector),a.FrPolar={initConfig:c},d+=(d.search(/\?/)>-1?"&":"?")+"api_token="+c.token;var f=document.querySelector(e);f||(e=defaultNodeSelector,f=document.createElement("div"),f.className=e.substr(1),document.body.appendChild(f));var g=document.createElement("script");g.type="text/javascript",g.src=d,g.addEventListener("error",function(b){console.error("Failed embed Polar popup: "+b.target.src+".\n Please make sure you passed valid athentication token.")});try{f.appendChild(g)}catch(a){console.error("Failed to add script tag to the dom.")}}
+  function loadFrPolar(a,b,c){var d="https://froont.com/-polar/embed.js",e=defaultNodeSelector=".fr-polar-popup-placeholder-js";"embedUrl"in c&&c.embedUrl&&(d=c.embedUrl,delete c.embedUrl),"nodeSelector"in c&&c.nodeSelector&&(e=c.nodeSelector,delete c.nodeSelector),a.FrPolar={initConfig:c},d+=(d.search(/\?/)>-1?"&":"?")+"api_token="+c.token;var f=document.querySelector(e);f||(e=defaultNodeSelector,f=document.createElement("div"),f.className=e.substr(1),document.body.appendChild(f));var g=document.createElement("script");g.type="text/javascript",g.src=d,g.addEventListener("error",function(b){console.error("Failed embed Polar popup: "+b.target.src+".\n Please make sure you passed valid athentication token.")});try{f.appendChild(g)}catch(a){console.error("Failed to add script tag to the dom.")}}
 
   // Configuration:
   var config = {
