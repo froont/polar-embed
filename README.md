@@ -126,6 +126,7 @@ interface TokenRequestBody {
   api_key: string;  // Your secret API key
   options: {  // Options that will limit the ues of token
     project: string  // Project slug, to restrict the token to the single project
+    available_steps: string[]  // List of availabe steps for user (step slug is visible in browser address bar)
     [option: string]: any  // Any other options
   }
 }
