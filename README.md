@@ -42,6 +42,10 @@ interface PolarConfig {
   fileUploadURL?: string;  // URL to use for file upload (defaults to Froont file upload URL)
   resultCallback?: Function|null;  // Function to be called after user has done editing (defaults to null)
   domain?: string;  // Domain in relation to which popup will construct URLs (defaults to `froont.com`)
+  upgradeTitle?: string; // Upgrade title shown above upgrade button
+  upgradeButtonText?: string; // Upgrade button text
+  upgradeCallback?: Function|null; // Function to be called when user clicks upgrade button (defaults to null)
+
 }
 ```
 
@@ -67,7 +71,13 @@ var config = {
   fileUploadURL: 'https://empire.com/api/file-upload',
   resultCallback: function (resultObject) {
     $.post('/api/save-result', resultObject);
-  }
+  },
+  upgradeTitle: 'Upgrade required to enable this feature',
+  upgradeButtonText: 'Upgrade now',
+  upgradeCallback: function upgradeCallback(stepSlug, token) {
+    console.log('Feature', stepSlug);
+    console.log('Token', token);
+  }  
 }
 ```
 
@@ -116,6 +126,7 @@ interface TokenRequestBody {
   api_key: string;  // Your secret API key
   options: {  // Options that will limit the ues of token
     project: string  // Project slug, to restrict the token to the single project
+    available_steps: string[]  // List of availabe steps for user (step slug is visible in browser address bar)
     [option: string]: any  // Any other options
   }
 }
@@ -245,3 +256,29 @@ interface PolarResult {
   html?: string;  // HTML from generated page
 }
 ```
+
+
+### Upgrade title (not required):
+```typescript
+upgradeTitle: string
+```
+Upgrade title shown above upgrade button when requested step is not available for user.
+If not specified, system default upgrade title will be shown.
+
+
+### Upgrade button text (not required):
+```typescript
+upgradeButtonText: string
+```
+Upgrade button text. Button is visible only if requested step is not available for user.
+If not specified, system default upgrade button text will be shown.
+
+
+### Upgrade callback (not required):
+```typescript
+upgradeCallback: Function|null
+```
+The given method will be called when user clicks upgrade button.
+Method parameters:
+`stepSlug` returns requested step slug,
+`token` user token.
