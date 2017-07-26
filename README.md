@@ -47,7 +47,7 @@ interface PolarConfig {
   upgradeTitle?: string; // Upgrade title shown above upgrade button
   upgradeButtonText?: string; // Upgrade button text
   upgradeCallback?: Function|null; // Function to be called when user clicks upgrade button (defaults to null)
-  imageLibrary?: string|Array<{title: string; url: string; tags: string[];}>;  // An array of Image library image objects or URL (GET) returning such array
+  imageLibrary?: string|Array<{title: string; url: string; tags: string[];}>;  // An array of Image library image objects or URL (GET) returning such array in JSON
 }
 ```
 
@@ -298,7 +298,7 @@ imageLibrary: string|Array<{
   tags: string[];
 }>
 ```
-An array of Image library image objects or URL (GET) returning such array. 
+An array of Image library image objects or URL (GET) returning such array in JSON. 
 To use this option, Image Library access is required.
 If specified, image input will open Image Library instead of browser's file select window.
 Each image object must contain image title, URL to the image file and array of tags.
