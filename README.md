@@ -84,7 +84,7 @@ var config = {
   stepLabels: {
     'select-page': 'Choose Page',
     'design': 'Edit Style'
-  }`
+  },
   css: '.fr_header {background-color: #fff;}',
   html: false,
   cssSelectorPrefix: '.star-wars',
