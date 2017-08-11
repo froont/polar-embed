@@ -6,7 +6,7 @@ To embed Polar popup, use this snippet. It will create the necessary `<script>` 
 
 To use the snippet, put it in a `<script>` tag at the end of your `<body>` element (right before the `</body>`).
 
-Also create a `<div>` element with a class `polar-popup-placeholder-js`, where you wan't the polar code to be loaded (it must be before the snippet).
+Also create a `<div>` element with a class `polar-popup-placeholder-js`, where you want the code to be loaded (it must be before the snippet).
 
 ```javascript
 (function() {
