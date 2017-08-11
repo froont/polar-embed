@@ -3,8 +3,10 @@
 ## Polar embed JavaScript:
 
 To embed Polar popup, use this snippet. It will create the necessary `<script>` and container elements for Polar popup to exist.
-You can configure where in your page this code will be loaded by creating an element with `fr-polar-popup-placeholder-js` class.
-If an element doesn't exist, it will be created and appended at the end of the `<body>`;
+
+To use the snippet, put it in a `<script>` tag at the end of your `<body>` element (right before the `</body>`).
+
+Also create a `<div>` element with a class `polar-popup-placeholder-js`, where you want the code to be loaded (it must be before the snippet).
 
 ```javascript
 (function() {
@@ -17,6 +19,22 @@ If an element doesn't exist, it will be created and appended at the end of the `
 
   loadFrPolar(window, document, config);
 })(window, document)
+```
+
+
+## Example document:
+```html
+<!DOCTYPE html>
+<html>
+  <head><!-- Your document meta data (title, favicon, etc...) --></head>
+  <body>
+  <!-- your document content (images, text, etc...) -->
+  <div class="polar-popup-placeholder-js"><!-- this is where the code will go once it's loaded --></div>
+  <script>
+    // The snippet goes here
+  </script>
+  </body>
+</html>
 ```
 
 
