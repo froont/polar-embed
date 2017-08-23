@@ -98,7 +98,7 @@ var config = {
   upgradeCallback: function upgradeCallback(stepSlug, token) {
     console.log('Feature', stepSlug);
     console.log('Token', token);
-  }  
+  }
 }
 ```
 
@@ -146,7 +146,7 @@ with request body:
 ```typescript
 interface TokenRequestBody {
   api_key: string;  // Your secret API key
-  options: {  // Options that will limit the ues of token
+  options: {  // Options that will limit the use of token
     project: string  // Project slug, to restrict the token to the single project
     available_steps: string[]  // List of availabe steps for user (step slug is visible in browser address bar)
     [option: string]: any  // Any other options
@@ -160,17 +160,24 @@ interface TokenRequestBody {
 ```typescript
 interface APITokenResponse {
   message: string;
-  data: {api_token: string};
+  data: {
+    api_token: string,  // API token
+    expires_at: string,  // ISO formatted token expiration date and time
+    project?: string  // Project slug, returned only if requested in request options
+  };
 }
 ```
 - Responses use HTTP response codes to identify if they're successful.
 - If request is not successful the `message` field will contain error message.
+- Response returns `project: '_new_'` with status code `404` if specific project is requested but not found.
 - Successful response Example:
 ```JSON
 {
   "message": "ok",
   "data": {
-    "api_token": "24fbe8fd-890f-41ff-9cca-201m2a7cgd3b"
+    "api_token": "24fbe8fd-890f-41ff-9cca-201m2a7cgd3b",
+    "expires_at": "2017-08-24T10:02:23.226427",
+    "project": "empire-page-template"
   }
 }
 ```
@@ -308,15 +315,15 @@ Method parameters:
 `token` user token.
 
 
-### Image Library (optional, Image Library access required): 
+### Image Library (optional, Image Library access required):
 ```typescript
 imageLibrary: string|Array<{
-  title: string; 
-  url: string; 
+  title: string;
+  url: string;
   tags: string[];
 }>
 ```
-An array of Image library image objects or URL (GET) returning such array in JSON. 
+An array of Image library image objects or URL (GET) returning such array in JSON.
 To use this option, Image Library access is required.
 If specified, image input will open Image Library instead of browser's file select window.
 Each image object must contain image title, URL to the image file and array of tags.
