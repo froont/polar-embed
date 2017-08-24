@@ -94,7 +94,7 @@ var config = {
   cssSelectorPrefix: '.star-wars',
   previewURL: 'https://empire.com/death-star-plans',
   fileUploadURL: 'https://empire.com/api/file-upload',
-  useProjectDoneCallback: true,
+  useProjectDoneCallback: false,
   resultCallback: function (resultObject) {
     $.post('/api/save-result', function () {
       if (resultObject.projectDoneCallback) {
