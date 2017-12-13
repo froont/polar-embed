@@ -284,6 +284,20 @@ This is equivalent to file input with name of "image":
 <input type="file" name="image">
 ```
 
+Request example
+```http
+------WebKitFormBoundarynrWYSUTqb6Xn2WPM
+Content-Disposition: form-data; name="image"; filename="1-grupa-02.jpg"
+Content-Type: image/jpeg
+
+
+------WebKitFormBoundarynrWYSUTqb6Xn2WPM
+Content-Disposition: form-data; name="variable"
+
+slide_image_5a3106feb7d10e2ecbb10a0f
+------WebKitFormBoundarynrWYSUTqb6Xn2WPM-
+```
+
 This will default to Froont image upload URL.
 
 
