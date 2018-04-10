@@ -277,9 +277,9 @@ If not specified, will default to the URL of Froont project being edited (e.g.: 
 ```typescript
 fileUploadURL: string
 ```
-URL which images will be uploaded to. If the user specifies new profile image or cover image the images will be `POST`ed to the given URL one by one with field name `image`.
+URL to which files used by user will be uploaded to. If the user specifies new profile image, cover image, audio file for playback or any other type of file for download the files will be `POST`ed to the given URL one by one with field name `user_file`.
 
-This is equivalent to file input with name of "image":
+This is equivalent to file input with name of "user_file":
 ```html
 <input type="file" name="user_file">
 ```
@@ -313,7 +313,7 @@ image
 ------WebKitFormBoundary8BSs1WNpAksN5Aex--
 ```
 
-This will default to Froont image upload URL.
+This will default to Froont image upload URL. (Froont doesn not support "any" file upload to Froont server.)
 
 
 ### Result callback (optional):
