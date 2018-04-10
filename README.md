@@ -286,16 +286,25 @@ This is equivalent to file input with name of "image":
 
 Request example
 ```http
-------WebKitFormBoundarynrWYSUTqb6Xn2WPM
-Content-Disposition: form-data; name="image"; filename="1-grupa-02.jpg"
-Content-Type: image/jpeg
+------WebKitFormBoundary8BSs1WNpAksN5Aex
+Content-Disposition: form-data; name="image"; filename="some-image.png"
+Content-Type: image/png
 
 
-------WebKitFormBoundarynrWYSUTqb6Xn2WPM
+------WebKitFormBoundary8BSs1WNpAksN5Aex
+Content-Disposition: form-data; name="user_file"; filename="some-image.png"
+Content-Type: image/png
+
+
+------WebKitFormBoundary8BSs1WNpAksN5Aex
 Content-Disposition: form-data; name="variable"
 
-slide_image_5a3106feb7d10e2ecbb10a0f
-------WebKitFormBoundarynrWYSUTqb6Xn2WPM-
+
+------WebKitFormBoundary8BSs1WNpAksN5Aex
+Content-Disposition: form-data; name="file_type"
+
+image
+------WebKitFormBoundary8BSs1WNpAksN5Aex--
 ```
 
 This will default to Froont image upload URL.
