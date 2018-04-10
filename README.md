@@ -281,8 +281,13 @@ URL which images will be uploaded to. If the user specifies new profile image or
 
 This is equivalent to file input with name of "image":
 ```html
-<input type="file" name="image">
+<input type="file" name="user_file">
 ```
+
+**Other form fields**
+
+- `image`(`<input type="file" name="image">`) - contains user file
+- `variable` - if uploaded through for input directly variable input
 
 Request example
 ```http
