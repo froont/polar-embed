@@ -287,7 +287,8 @@ This is equivalent to file input with name of "image":
 **Other form fields**
 
 - `image`(`<input type="file" name="image">`) - contains user file
-- `variable` - if uploaded through for input directly variable input
+- `variable` - name of variable (if uploaded through for input directly variable input)
+- `type` - type of file that is being uploaded (`image`, `audio`, `any`). The type depends on input type used for file selection
 
 Request example
 ```http
