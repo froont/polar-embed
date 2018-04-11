@@ -315,6 +315,17 @@ image
 
 This will default to Froont image upload URL. (Froont doesn not support "any" file upload to Froont server.)
 
+**Required Response**
+
+```typescript
+interface FileUploadResponse {
+  message: string;  // Any kind of status message, this will be displayed if the response is error
+  data: {
+    url: string;  // API token
+  };
+}
+```
+
 
 ### Result callback (optional):
 ```typescript
