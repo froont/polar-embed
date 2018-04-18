@@ -400,12 +400,14 @@ imageLibrary: string|Array<{
   title: string;
   url: string;
   tags: string[];
+  type?: 'image'|'audio'|'any';
 }>
 ```
 An array of Image library image objects or URL (GET) returning such array in JSON.
 To use this option, Image Library access is required.
 If specified, image input will open Image Library instead of browser's file select window.
 Each image object must contain image title, URL to the image file and array of tags.
+Additionally item may contain `type` field. By default all items are considered images, but other types of items can be passed (`audio`, `any`) and they will be made available to user in inputs that require such items.
 
 
 
