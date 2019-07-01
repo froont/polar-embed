@@ -479,7 +479,7 @@ interface APICloneResponse {
 - Successful response Example:
 ```JSON
 {
-    "data": {
+  "data": {
     "author": "darth-v", 
     "description": null, 
     "is_private": false, 
