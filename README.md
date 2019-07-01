@@ -476,6 +476,16 @@ interface APICloneResponse {
 - Responses use HTTP response codes to identify if they're successful.
 - If request is not successful the `message` field will contain error message.
 - If cloning the project is successfull, but creating the token isn't then project data will be returned in the error response. With the error message.
+- Request example:
+```HTTP
+POST https://froont.com/-api/death-star-plans/-api/clone
+Content-Type: application/json
+
+{
+  "api_key": "unique0api1key2b3c4d5e6f7g8h9i0jklmnopqr"
+}
+```
+
 - Successful response Example:
 ```JSON
 {
