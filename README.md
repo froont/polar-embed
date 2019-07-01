@@ -10,14 +10,14 @@ Also create a `<div>` element with a class `polar-popup-placeholder-js`, where y
 
 ```javascript
 (function() {
-  function loadFrPolar(e,o,t){var r,a="http://froont.com/-instant/embed.js",d=defaultNodeSelector=".fr-polar-popup-placeholder-js";if(e.FrPolar&&e.FrPolar.polarLoaded)return void(window.location.hash="/magic/edit/"+t.project);"embedUrl"in t&&t.embedUrl&&(a=t.embedUrl,delete t.embedUrl),"nodeSelector"in t&&t.nodeSelector&&(d=t.nodeSelector,delete t.nodeSelector),e.FrPolar={initConfig:{}};for(var l in t)e.FrPolar.initConfig[l]=t[l];a+=(a.search(/\?/)>-1?"&":"?")+"api_token="+t.token,r=/^#[A-z0-9_-]+$/.test(d)?document.selectElementById(d.substr(1)):/^\.[A-z0-9_-]+$/.test(r)?document.getElementsByClassName(d.substr(1))[0]:document.querySelector(d),r||(d=defaultNodeSelector,r=document.createElement("div"),r.className=d.substr(1),document.body.appendChild(r));var n=document.createElement("script");n.type="text/javascript",n.src=a,e.FrPolar.polarLoaded=!0,n.addEventListener("error",function(e){console.error("Failed embed Instant popup: "+e.target.src+".\n Please make sure you passed valid athentication token.")});try{r.appendChild(n)}catch(e){console.error("Failed to add script tag to the dom.")}}
+  function loadFrInstant(e,o,t){var r,a="http://froont.com/-instant/embed.js",d=defaultNodeSelector=".fr-polar-popup-placeholder-js";if(e.FrPolar&&e.FrPolar.polarLoaded)return void(window.location.hash="/magic/edit/"+t.project);"embedUrl"in t&&t.embedUrl&&(a=t.embedUrl,delete t.embedUrl),"nodeSelector"in t&&t.nodeSelector&&(d=t.nodeSelector,delete t.nodeSelector),e.FrPolar={initConfig:{}};for(var l in t)e.FrPolar.initConfig[l]=t[l];a+=(a.search(/\?/)>-1?"&":"?")+"api_token="+t.token,r=/^#[A-z0-9_-]+$/.test(d)?document.selectElementById(d.substr(1)):/^\.[A-z0-9_-]+$/.test(r)?document.getElementsByClassName(d.substr(1))[0]:document.querySelector(d),r||(d=defaultNodeSelector,r=document.createElement("div"),r.className=d.substr(1),document.body.appendChild(r));var n=document.createElement("script");n.type="text/javascript",n.src=a,e.FrPolar.polarLoaded=!0,n.addEventListener("error",function(e){console.error("Failed embed Instant popup: "+e.target.src+".\n Please make sure you passed valid athentication token.")});try{r.appendChild(n)}catch(e){console.error("Failed to add script tag to the dom.")}}
 
   // Configuration:
   var config = {
     // Your configuration goes here
   };
 
-  loadFrPolar(window, document, config);
+  loadFrInstant(window, document, config);
 })(window, document)
 ```
 
