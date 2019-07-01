@@ -10,7 +10,7 @@ Also create a `<div>` element with a class `polar-popup-placeholder-js`, where y
 
 ```javascript
 (function() {
-  function loadFrPolar(e,o,t){var r,a="http://froont.com/-polar/embed.js",d=defaultNodeSelector=".fr-polar-popup-placeholder-js";if(e.FrPolar&&e.FrPolar.polarLoaded)return void(window.location.hash="/magic/edit/"+t.project);"embedUrl"in t&&t.embedUrl&&(a=t.embedUrl,delete t.embedUrl),"nodeSelector"in t&&t.nodeSelector&&(d=t.nodeSelector,delete t.nodeSelector),e.FrPolar={initConfig:{}};for(var l in t)e.FrPolar.initConfig[l]=t[l];a+=(a.search(/\?/)>-1?"&":"?")+"api_token="+t.token,r=/^#[A-z0-9_-]+$/.test(d)?document.selectElementById(d.substr(1)):/^\.[A-z0-9_-]+$/.test(r)?document.getElementsByClassName(d.substr(1))[0]:document.querySelector(d),r||(d=defaultNodeSelector,r=document.createElement("div"),r.className=d.substr(1),document.body.appendChild(r));var n=document.createElement("script");n.type="text/javascript",n.src=a,e.FrPolar.polarLoaded=!0,n.addEventListener("error",function(e){console.error("Failed embed Polar popup: "+e.target.src+".\n Please make sure you passed valid athentication token.")});try{r.appendChild(n)}catch(e){console.error("Failed to add script tag to the dom.")}}
+  function loadFrPolar(e,o,t){var r,a="http://froont.com/-instant/embed.js",d=defaultNodeSelector=".fr-polar-popup-placeholder-js";if(e.FrPolar&&e.FrPolar.polarLoaded)return void(window.location.hash="/magic/edit/"+t.project);"embedUrl"in t&&t.embedUrl&&(a=t.embedUrl,delete t.embedUrl),"nodeSelector"in t&&t.nodeSelector&&(d=t.nodeSelector,delete t.nodeSelector),e.FrPolar={initConfig:{}};for(var l in t)e.FrPolar.initConfig[l]=t[l];a+=(a.search(/\?/)>-1?"&":"?")+"api_token="+t.token,r=/^#[A-z0-9_-]+$/.test(d)?document.selectElementById(d.substr(1)):/^\.[A-z0-9_-]+$/.test(r)?document.getElementsByClassName(d.substr(1))[0]:document.querySelector(d),r||(d=defaultNodeSelector,r=document.createElement("div"),r.className=d.substr(1),document.body.appendChild(r));var n=document.createElement("script");n.type="text/javascript",n.src=a,e.FrPolar.polarLoaded=!0,n.addEventListener("error",function(e){console.error("Failed embed Instant popup: "+e.target.src+".\n Please make sure you passed valid athentication token.")});try{r.appendChild(n)}catch(e){console.error("Failed to add script tag to the dom.")}}
 
   // Configuration:
   var config = {
@@ -77,7 +77,7 @@ interface FroontInstantConfig {
 ### Example configuration object:
 ```javascript
 var config = {
-  embedUrl: 'https://froont.com/-polar/embed.js',
+  embedUrl: 'https://froont.com/-instant/embed.js',
   app: 'darth-v',
   token: '24fbe8fd-890f-41ff-9cca-201m2a7cgd3b';
   project: 'death-star-plans';
@@ -91,7 +91,7 @@ var config = {
   },
   css: '.fr_header {background-color: #fff;}',
   html: false,
-  cssSelectorPrefix: '.star-wars',
+  cssSelectorPrefix: '.star-wars',
   previewURL: 'https://empire.com/death-star-plans',
   fileUploadURL: 'https://empire.com/api/file-upload',
   useProjectDoneCallback: false,
@@ -131,12 +131,12 @@ It's used to switch between production and development logics as well as to cont
 It will be a variation of this URL:
 
 ```
-polarUrl: 'https://froont.com/-polar/embed.js'
+instantUrl: 'https://froont.com/-instant/embed.js'
 ```
 
 The URL may contain a version for cache busting or to load a specific embed version.
 ```
-https://froont.com/-polar/embed.<version>.js
+https://froont.com/-instant/embed.<version>.js
 ```
 
 ### App identifier:
@@ -145,7 +145,7 @@ app: string
 ```
 This identifies the user whose projects will be used to generate your pages.
 To protect your production pages, it will most likely differ between production and development.
-Something like – production: `app: 'darth-v'`, development: `app: 'darth-dev'`.
+Something like - production: `app: 'darth-v'`, development: `app: 'darth-dev'`.
 
 
 ### Session token:
@@ -490,18 +490,18 @@ Content-Type: application/json
 ```JSON
 {
   "data": {
-    "author": "darth-v", 
-    "description": null, 
-    "is_private": false, 
-    "slug": "death-star-plans-kxx4z3e", 
-    "tags": [], 
-    "title": "The death star plans", 
+    "author": "darth-v",
+    "description": null,
+    "is_private": false,
+    "slug": "death-star-plans-kxx4z3e",
+    "tags": [],
+    "title": "The death star plans",
     "token": {
-      "api_token": "616f3c80-f8b2-4380-9d42-891a845d0a4c", 
+      "api_token": "616f3c80-f8b2-4380-9d42-891a845d0a4c",
       "expires_at": "2019-06-27T06:10:54.488694"
-    }, 
+    },
     "url": "http://froont.com/darth-v/death-star-plans-kxx4z3e"
-  }, 
+  },
   "message": "Project cloned successfully!"
 }
 ```
