@@ -448,6 +448,7 @@ interface CloneRequestBody {
   api_key: string;  // Your secret API key
   options: {  // Options that will limit the use of token
     available_steps: string[]  // List of available steps for user (used for token generation)
+    rebase?: boolean  // When clonging from one user to another, if they have different base projects this will rebase the project according to current users base project
   }
 }
 ```
